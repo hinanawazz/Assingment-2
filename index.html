@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+  <script>
+const arr = [1, 5, 7, 9, 2, 3, 6, 8];
+// Ascending Order
+function ascendingOrder(array) {
+  const ascending = [];
+  const Array = [...array];
+  while (Array.length > 0) {
+    let minIndex = 0;
+    for (let i = 1; i < Array.length; i++) {
+      if (Array[i] < Array[minIndex]) {
+        minIndex = i;
+      }
+    }
+    ascending.push(Array[minIndex]);
+    Array.splice(minIndex, 1);
+  }
+  return ascending;
+}
+
+// Descending Order
+function descendingOrder(array) {
+  const descending = [];
+  const copiedArray = [...array];
+
+  while (copiedArray.length > 0) {
+    let maxIndex = 0;
+    for (let i = 1; i < copiedArray.length; i++) {
+      if (copiedArray[i] > copiedArray[maxIndex]) {
+        maxIndex = i;
+      }
+    }
+    descending.push(copiedArray[maxIndex]);
+    copiedArray.splice(maxIndex, 1);
+  }
+  return descending;
+}
+
+console.log(ascendingOrder(arr));  
+console.log(descendingOrder(arr)); 
+    </script>
+</body>
+
+</html>
